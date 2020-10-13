@@ -4,7 +4,7 @@
 let i; // Iterator.
 let ast = []; // Abstract Syntax Tree.
 const fs = require('fs'); // Filesystem nodule.
-const [,,...args] = process.argv; // system arguments
+const [,,...sys_args] = process.argv; // system arguments
 const rawCode = 'x:3;b:6;c:9;'; // not processing files, working on actual translation for now.
 const cleanCode = rawCode.replace(/\s/g,''); // remove all whitespace
 const codeArray = cleanCode.split(';'); // array of statements.
