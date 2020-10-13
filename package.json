@@ -1,5 +1,5 @@
 {
-  "name": "tar",
+  "name": "wowl",
   "version": "1.0.2",
   "description": "A language for complex and simple maths operations.",
   "main": "./index.js",
