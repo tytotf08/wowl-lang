@@ -1,11 +1,11 @@
 {
   "name": "tar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A language for complex and simple maths operations.",
-  "main": "./cli/index.js",
+  "main": "./index.js",
   "scripts": {
     "start": "node .",
-    "test": "echo \"Tested!\""
+    "test_cli": "node ./cli/index.js"
   },
   "author": "TytoTF08",
   "license": "MIT",
