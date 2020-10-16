@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Wowl - a language for Maths.
 'use strict';
+let statementType;
+let cc = "";
 let i; // Iterator.
 let ast = []; // Abstract Syntax Tree.
 const fs = require('fs'); // Filesystem nodule.
@@ -11,6 +13,7 @@ const codeArray = cleanCode.split(';'); // array of statements.
 if (codeArray.slice(-1)[0] === '') {
 	codeArray.pop(); // remove the empty character at the end.
 }
+// add to the ast array
 for (i = 0; i < codeArray.length; i+=1) {
 	let object = {};
 	let splitStatement = codeArray[i].split(':');
@@ -26,4 +29,10 @@ for (i = 0; i < codeArray.length; i+=1) {
 		}
 	} 
 }
-console.log(ast);
+// so we gonna now filter through the ast
+for (i = 0; i < ast.length; i +=1) {
+	if (ast[i].type === 'variable' ) {
+		cc += 'var ' + ast[i].definition + ' = ' + ast[i].value + ';\n';
+	}
+	console.log(cc);
+}

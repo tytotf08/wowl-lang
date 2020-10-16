@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 const fs = require('fs'); // Filesystem nodule.
 'use strict';
-let test = "test"
 const wowl =  function(usr_code) {
 	let i; // Iterator.
 	let ast = []; // Abstract Syntax Tree.
-	const [,,...args] = process.argv; // system arguments
-	const rawCode = usr_code; // not processing files, working on actual translation for now.
+	const rawCode = usr_code; // processing the first parameter
 	const cleanCode = rawCode.replace(/\s/g,''); // remove all whitespace
 	const codeArray = cleanCode.split(';'); // array of statements.
 	if (codeArray.slice(-1)[0] === '') {
