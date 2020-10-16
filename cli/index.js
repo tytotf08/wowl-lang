@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 // Wowl - a language for Maths.
 'use strict';
+const [,,...sys_args] = process.argv; // system arguments
+// the interpreter will convert the file given into code here when we do that
 let statementType;
 let cc = "";
 let i; // Iterator.
 let ast = []; // Abstract Syntax Tree.
-const fs = require('fs'); // Filesystem nodule.
-const [,,...sys_args] = process.argv; // system arguments
+const fs = require('fs'); // Filesystem module.
 const rawCode = 'x:3;b:6;c:9;'; // not processing files, working on actual translation for now.
 const cleanCode = rawCode.replace(/\s/g,''); // remove all whitespace
 const codeArray = cleanCode.split(';'); // array of statements.
@@ -32,7 +33,8 @@ for (i = 0; i < codeArray.length; i+=1) {
 // so we gonna now filter through the ast
 for (i = 0; i < ast.length; i +=1) {
 	if (ast[i].type === 'variable' ) {
-		cc += 'var ' + ast[i].definition + ' = ' + ast[i].value + ';\n';
+		cc += 'var ' + ast[i].definition + ' = ' + ast[i].value + ';\n'; // add to the compiled code variable!
+		cc += 'console.log(String(' + ast[i].definition + '));\n'; // node paints numbers strangely
 	}
-	console.log(cc);
 }
+eval(cc);
