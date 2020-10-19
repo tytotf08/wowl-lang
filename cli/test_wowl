@@ -1,2 +1,6 @@
 #!/usr/local/bin/wowl
-js:5;
+one:2;
+two:0;
+three:two;
+four:8;
+oneone:4;
