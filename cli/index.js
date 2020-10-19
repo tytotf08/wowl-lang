@@ -10,12 +10,12 @@ fs.readFile(file, 'utf8', function(err, data) {
   if (err) {
     return console.log(err);
   }
-  const rawCode = data;
+  const rawCode = data += '\n';
   let statementType;
   let cc = "";
   let i; // Iterator.
   let ast = []; // Abstract Syntax Tree.
-  const cleanCode = rawCode.replace(/\s/g, ''); // remove all whitespace
+  let cleanCode = rawCode.replace(/\#.*\n/g, '').replace(/\s/g, ''); // remove all whitespace and comments
   const codeArray = cleanCode.split(';'); // array of statements.
   if (codeArray.slice(-1)[0] === '') {
     codeArray.pop(); // remove the empty character at the end.
