@@ -16,7 +16,7 @@ fs.readFile(file, 'utf8', function(err, data) {
 	let namespace = {}; // NameSpace Object.
   let statementType;
   let cc = "";
-  let cleanCode = rawCode.replace(/^\#.*\n/g, '').replace(/\s/g, ''); // remove all whitespace and comments
+  let cleanCode = rawCode.replace(/^\#.*\n/gm, '').replace(/\s/g, ''); // remove all whitespace and comments
   const codeArray = cleanCode.split(';'); // array of statements.
   if (codeArray.slice(-1)[0] === '') {
     codeArray.pop(); // remove the empty character at the end.
