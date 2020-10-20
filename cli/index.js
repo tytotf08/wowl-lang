@@ -46,7 +46,6 @@ fs.readFile(file, 'utf8', function(err, data) {
       } else {
       	console.log('Bleh bleh. Error.');
       }
-
     }    	
   }
   global.eval(cc);
