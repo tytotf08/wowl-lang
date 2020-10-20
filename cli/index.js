@@ -15,7 +15,7 @@ fs.readFile(file, 'utf8', function(err, data) {
 	let ast = []; // Abstract Syntax Tree.
 	let namespace = {}; // NameSpace Object.
   let statementType;
-  let cc = "";
+  let cc = '';
   let cleanCode = rawCode.replace(/^\#.*\n/gm, '').replace(/\s/g, ''); // remove all whitespace and comments
   const codeArray = cleanCode.split(';'); // array of statements.
   if (codeArray.slice(-1)[0] === '') {
@@ -44,11 +44,11 @@ fs.readFile(file, 'utf8', function(err, data) {
       		cc += 'var ' + ast[i].definition + ' = ' + namespace[ast[i].value] + ';\n'; // add to the compiled code variable!
       		cc += 'console.log(String(' + ast[i].definition + '));\n'; // node paints numbers strangely
       } else {
-      	console.log("Bleh bleh. Error.");
+      	console.log('Bleh bleh. Error.');
       }
 
     }    	
   }
-  eval(cc);
+  global.eval(cc);
 });
 
