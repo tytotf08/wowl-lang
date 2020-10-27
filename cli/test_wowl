@@ -1,7 +1,11 @@
 #!/usr/local/bin/wowl
-one:2;
-two:0;
-three:two;
-four:8;
-oneone:4;
 
+# section 1
+one:2;
+twotwo:6-3;
+
+# section 2
+four:2;five:2;two:2+5;three:two;pour:2;
+oneone:four;
+two:3;
+three:two;
